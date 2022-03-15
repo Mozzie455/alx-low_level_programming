@@ -8,13 +8,15 @@
 
 int main(void)
 {
-	int i = 0;
-	char p[] = "_putchar";
-	
-	for (i= 0;i < 9; i++)
+	char *sh = "_putchar";
+
+	while (*sh)
 	{
-		putchar(p[i]);
+		_putchar(*sh);
+		sh++;
 	}
-	putchar('\n');
+
+	_putchar('\n');
+
 	return (0);
 }
