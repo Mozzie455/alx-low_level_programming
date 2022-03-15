@@ -9,12 +9,11 @@
 int main(void)
 {
 	int i = 0;
-	char output[] = "_putchar";
+	char p[] = "_putchar";
 
-	while (i < 9)
+	for (i= 0;i < 9; i++)
 	{
-		fputchar(output[i]);
-		i++;
+		putchar(p[i]);
 	}
 	putchar('\n');
 	return (0);
