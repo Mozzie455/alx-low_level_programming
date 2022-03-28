@@ -1,20 +1,19 @@
 #include "main.h"
 
 /**
-  * print_chessboard - Print the chessboard
-  * @a: array of pieces
-  *
-  * Return: Nothing.
-  */
+ * print_chessboard - prints a chessboard
+ * @a: pointer to a bidimensional array
+ *
+ * Return: none
+ */
 void print_chessboard(char (*a)[8])
 {
-	int indx1, indx2;
+	int count, c;
 
-	for (indx1 = 0; a[indx1][7]; indx1++)
+	for (c = 0; c < 8; c++)
 	{
-		for (indx2 = 0; indx2 < 8; indx2++)
-			_putchar(a[indx1][indx2]);
-
-		_putchar('\n');
+		for (count = 0; count < 8; count++)
+			_putchar(a[c][count]);
+		_putchar(10);
 	}
 }
