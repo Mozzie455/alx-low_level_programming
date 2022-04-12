@@ -8,7 +8,6 @@ int _putchar(char c);
  * @name: dog name
  * @age: dog age
  * @owner: dog owner
- * 
  * Description: creates profile with name, age, owner elements
  */
 
