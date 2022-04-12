@@ -1,7 +1,7 @@
 #include <stdio.h>
 /**
  * main - print file name
- * 
+ *
  * Return:void
  */
 int main(void)
