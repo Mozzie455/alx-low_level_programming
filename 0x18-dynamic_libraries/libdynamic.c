@@ -1,8 +1,10 @@
 #include "main.h"
+
 int _putchar(char c)
 {
     return (0);
 }
+
 int _islower(int c)
 {
     return (0);
@@ -13,7 +15,7 @@ int _isalpha(int c)
 }
 int _abs(int n)
 {
-    return (0);
+   return (0);
 }
 int _isupper(int c)
 {
@@ -29,7 +31,7 @@ int _strlen(char *s)
 }
 void _puts(char *s)
 {
-
+    
 }
 char *_strcpy(char *dest, char *src)
 {
