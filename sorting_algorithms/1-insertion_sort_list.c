@@ -1,50 +1,44 @@
 #include "sort.h"
 /**
- * insertion_sort_list - sorts a doubly linked list of integers
- * in ascending order using the Insertion sort ailgorithm
- * @list: pointer to the list head
- * Return: no return
- **/
+ * insertion_sort_list - sorts a doubly linked
+ * list of integers in ascending order using the Insertion sort algorithm
+ * @list: list
+ * Return: void
+ */
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *head_tmp1, *head_tmp2, *aux1, *aux2;
-	int flag;
+	listint_t *head = NULL, *tmp = NULL;
 
-	if (list)
+	if (!list || !(*list) || !((*list)->next))
+		return;
+
+	head = (*list)->next;
+
+	while (head)
 	{
-		head_tmp1 = *list;
-		head_tmp2 = *list;
-		while (list && head_tmp1->next)
+		while (head->prev && head->n < (head->prev)->n)
 		{
-			if (head_tmp1->next)
+			tmp = head->prev;
+
+			if (tmp->prev)
+				(tmp->prev)->next = head;
+
+			else
 			{
-				flag = 0;
-				head_tmp2 = head_tmp1;
-				while (head_tmp2 && head_tmp2->n > head_tmp2->next->n)
-				{
-					aux1 = head_tmp2;
-					aux2 = head_tmp2->next;
-					aux1->next = aux2->next;
-					if (aux2->next)
-						aux2->next->prev = aux1;
-					if (aux2)
-					{
-						aux2->prev = aux1->prev;
-						aux2->next = aux1;
-					}
-					if (aux1)
-						aux1->prev = aux2;
-					if (aux2->prev)
-						aux2->prev->next = aux2;
-					head_tmp2 = aux2->prev;
-					if (!aux2->prev)
-						*list = aux2;
-					print_list(*list);
-					flag = 1;
-				}
+				*list = head;
 			}
-			if (flag == 0)
-				head_tmp1 = head_tmp1->next;
+
+			head->prev = tmp->prev;
+
+			if (head->next)
+				(head->next)->prev = tmp;
+
+			tmp->next = head->next;
+			head->next = tmp;
+			tmp->prev = head;
+
+			print_list(*list);
 		}
+		head = head->next;
 	}
 }
