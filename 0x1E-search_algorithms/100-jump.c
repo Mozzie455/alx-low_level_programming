@@ -1,12 +1,12 @@
 #include "search_algos.h"
 
 /**
- * jump_search - search 
- * @array: array
- * @size: Size 
- * @value: Value 
- * Return: The index 
- */
+* jump_search - search
+* @array: array
+* @size: Size
+* @value: Value
+* Return: The index
+ **/
 int jump_search(int *array, size_t size, int value)
 {
 	int min = 0;

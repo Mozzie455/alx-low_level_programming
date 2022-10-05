@@ -1,11 +1,11 @@
 #include "search_algos.h"
 
 /**
- * interpolation_search - search 
+ * interpolation_search - search
  * @array: The sort
- * @size: Size 
- * @value: Value 
- * Return: The index 
+ * @size: Size
+ * @value: Value
+ * Return: The index
  */
 int interpolation_search(int *array, size_t size, int value)
 {
